@@ -607,7 +607,7 @@
         <p>{Math.sqrt(Number(math.multiply(math.multiply(weight_vector,covar_matrix),weight_vector)))}</p>
       </div>
 
-      {#if monto_invertido!=undefined && weight_vector!=undefined}
+      {#if monto_invertido!=undefined}
         <div class="flex flex-col">
           <p>Valor en riesgo del portafolio</p>
           <p>{Math.sqrt(365)*Number(monto_invertido)*Math.sqrt(Number(math.multiply(math.multiply(weight_vector,covar_matrix),weight_vector)))*Number(valor_tablas)}</p>
