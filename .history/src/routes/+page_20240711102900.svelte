@@ -295,7 +295,6 @@
 <div class="bg-gray-200 rounded p-4 flex flex-col items-center m-4 shadow-md">
     <h2 class="w-full bg-white rounded text-xl font-bold text-center">Acerca del modelo y del proyecto</h2>
     <p class="text-justify p-2">
-      !NOTA: ESTE DOCUMENTO ES MUY LARGO FAVOR DE ASEGURARSE DE DARLE SCROLL HASTA MERO ABAJO, AHI PODRA NAVERGAR EL EXCEL SIN PROBLEMAS PERO TIENE QUE ESTAR HASTA MERO ABAJO!
       Para comenzar hay que explicar que es lo que se está presentando. Actualmente
       está observando una aplicación realizada con sveltekit y tailwindcss. Este framework permite
       realizar páginas dinámicas y reactivas con mucha facilidad utilizando HTML.

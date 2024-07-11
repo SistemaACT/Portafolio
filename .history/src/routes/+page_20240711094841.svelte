@@ -69,7 +69,6 @@
       get_coin_ohlc(counter)
       get_coin_data(counter)
       purchase_ammount.push(0)
-      ponderaciones.push(0)
       purchase_date.push("")
       counter++
     }
@@ -241,10 +240,10 @@
     }
 
     function hangle_date_diference(date:Date){
-
-      var timeDiff = Math.abs(Date.now() - date.getTime());
-      var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-      return diffDays;
+      console.log(date)
+      const current_date = Date.now()
+      const dif_time = current_date -date.getDate()
+      return Math.floor(Math.abs(dif_time)/(1000*60*60*24))
     }
 
 
@@ -295,7 +294,6 @@
 <div class="bg-gray-200 rounded p-4 flex flex-col items-center m-4 shadow-md">
     <h2 class="w-full bg-white rounded text-xl font-bold text-center">Acerca del modelo y del proyecto</h2>
     <p class="text-justify p-2">
-      !NOTA: ESTE DOCUMENTO ES MUY LARGO FAVOR DE ASEGURARSE DE DARLE SCROLL HASTA MERO ABAJO, AHI PODRA NAVERGAR EL EXCEL SIN PROBLEMAS PERO TIENE QUE ESTAR HASTA MERO ABAJO!
       Para comenzar hay que explicar que es lo que se está presentando. Actualmente
       está observando una aplicación realizada con sveltekit y tailwindcss. Este framework permite
       realizar páginas dinámicas y reactivas con mucha facilidad utilizando HTML.
@@ -442,7 +440,7 @@
         <p>Valor actual del portafolio: {coin.precio_actual * coin.cantidad_de_compra}</p>
         <p>Profit/Loss: {coin.precio_actual * coin.cantidad_de_compra - coin.precio_compra * coin.cantidad_de_compra}</p>
         <p>ROI: {(coin.precio_actual * coin.cantidad_de_compra - coin.precio_compra * coin.cantidad_de_compra) / (coin.precio_compra * coin.cantidad_de_compra)}</p>
-        <p>Dias desde compra:{hangle_date_diference(coin.fecha_de_compra)}</p>
+        <p>Dias desde compra:{hangle_date_diference(coin.fecha_de_compra.getDate())}</p>
         <p>Retorno Diario:{((coin.precio_actual * coin.cantidad_de_compra - coin.precio_compra * coin.cantidad_de_compra) / (coin.precio_compra * coin.cantidad_de_compra))/(now.getDate()-coin.fecha_de_compra.getDate())}%</p>
       </div>
     </div>
@@ -566,16 +564,15 @@
     <div class="flex justify-evenly">
 
       <div class="flex flex-col">
-        <label for="Tablas">(primero ingresa ponderaciones tiene un error) Ingresa el valor de tablas que quieras utilizar</label>
+        <label for="Tablas">Ingresa el valor de tablas que quieras utilizar</label>
         <input class="border border-black rounded p-1" bind:value={valor_tablas} type="number" placeholder="Valor de Tablas (ej:1.96)" id="Tablas"/>
       </div>
   
       <div class="flex flex-col">
-        <label for="Monto">(primero ingresa ponderaciones tiene un error) Ingresa el monto a invertir</label>
+        <label for="Monto">Ingresa el monto a invertir</label>
         <input class="border border-black rounded p-1" bind:value={monto_invertido} type="number" placeholder="Monto" id="Monto"/>
       </div>
     </div>
-
     <div class=" flex justify-evenly mt-2">
       {#each selected_coins as coin,i}
         <div class="flex flex-col">
@@ -853,10 +850,8 @@
       
 
   </div>
-  <div class="bg-gray-300 rounded m-4 p-4"><span class="text-2xl">Reporte Ejecutivo</span> puede ver el documento en la siguiente liga <a class="text-blue-500 hover:text-purple-500">https://docs.google.com/document/d/1OBj8EoG-NDd3iwhf5qbvJfywDZaQV3XNRqdhxvW2u_0/edit?usp=sharing</a></div>
-  <iframe  class="w-full h-[100vh]" src="https://docs.google.com/document/d/e/2PACX-1vTpi2IeCd1cIJudJLlxDEuax5Hp9-PliOly02V7cwpnroObPq4NJx22Q4ckgY1kmIi3Sy4r1EhcYJcK/pub?embedded=true"></iframe>
 
-  <div class="bg-gray-300 rounded m-4 p-4 "><span class="text-2xl">Excel de la Clase</span> (Tambien tiene accesso a el conigecko api y al api de chatGPT) si desea ver el documento en una pagina individual haga click en la siguiente liga <a class="text-blue-500 hover:text-purple-500" href="https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing">https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing</a>. !!!Advertencia!!! abrir el documento en google drive ocaciona que las peticiones al servidor se reinicien
+  <div class="bg-gray-300 rounded m-4 p-4 ">Excel de la Clase (Tambien tiene accesso a el conigecko api y al api de chatGPT) si desea ver el documento en una pagina individual haga click en la siguiente liga <a class="text-blue-500 hover:text-purple-500" href="https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing">https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing</a>. !!!Advertencia!!! abrir el documento en google drive ocaciona que las peticiones al servidor se reinicien
     ocacionando se exceda el limite de peticiones y termina corrompiendo la informacion. Esto si tiene solucion mediante cookies, pero realizar ese trabajo es mas problema que el benenficio que deja.
   </div>
   <iframe class="w-full h-[100vh]" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr7ponGSTiYRsPcYey5WnTwyuKQz5BhmRWEQkdaK6crWJDRiqS9HyEhIfObr56_1J6dF-07dZQTYvE/pubhtml?widget=true&amp;headers=false"></iframe>

@@ -295,7 +295,6 @@
 <div class="bg-gray-200 rounded p-4 flex flex-col items-center m-4 shadow-md">
     <h2 class="w-full bg-white rounded text-xl font-bold text-center">Acerca del modelo y del proyecto</h2>
     <p class="text-justify p-2">
-      !NOTA: ESTE DOCUMENTO ES MUY LARGO FAVOR DE ASEGURARSE DE DARLE SCROLL HASTA MERO ABAJO, AHI PODRA NAVERGAR EL EXCEL SIN PROBLEMAS PERO TIENE QUE ESTAR HASTA MERO ABAJO!
       Para comenzar hay que explicar que es lo que se está presentando. Actualmente
       está observando una aplicación realizada con sveltekit y tailwindcss. Este framework permite
       realizar páginas dinámicas y reactivas con mucha facilidad utilizando HTML.
@@ -853,10 +852,10 @@
       
 
   </div>
-  <div class="bg-gray-300 rounded m-4 p-4"><span class="text-2xl">Reporte Ejecutivo</span> puede ver el documento en la siguiente liga <a class="text-blue-500 hover:text-purple-500">https://docs.google.com/document/d/1OBj8EoG-NDd3iwhf5qbvJfywDZaQV3XNRqdhxvW2u_0/edit?usp=sharing</a></div>
+  <div class="bg-gray-300 rounded m-4 p-4 text-2xl">Reporte Ejecutivo</div>
   <iframe  class="w-full h-[100vh]" src="https://docs.google.com/document/d/e/2PACX-1vTpi2IeCd1cIJudJLlxDEuax5Hp9-PliOly02V7cwpnroObPq4NJx22Q4ckgY1kmIi3Sy4r1EhcYJcK/pub?embedded=true"></iframe>
 
-  <div class="bg-gray-300 rounded m-4 p-4 "><span class="text-2xl">Excel de la Clase</span> (Tambien tiene accesso a el conigecko api y al api de chatGPT) si desea ver el documento en una pagina individual haga click en la siguiente liga <a class="text-blue-500 hover:text-purple-500" href="https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing">https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing</a>. !!!Advertencia!!! abrir el documento en google drive ocaciona que las peticiones al servidor se reinicien
+  <div class="bg-gray-300 rounded m-4 p-4 ">Excel de la Clase (Tambien tiene accesso a el conigecko api y al api de chatGPT) si desea ver el documento en una pagina individual haga click en la siguiente liga <a class="text-blue-500 hover:text-purple-500" href="https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing">https://docs.google.com/spreadsheets/d/13bk4DsQc2IszsRjpmfged_aZQyrn2o_umB7wDtNm_Tc/edit?usp=sharing</a>. !!!Advertencia!!! abrir el documento en google drive ocaciona que las peticiones al servidor se reinicien
     ocacionando se exceda el limite de peticiones y termina corrompiendo la informacion. Esto si tiene solucion mediante cookies, pero realizar ese trabajo es mas problema que el benenficio que deja.
   </div>
   <iframe class="w-full h-[100vh]" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr7ponGSTiYRsPcYey5WnTwyuKQz5BhmRWEQkdaK6crWJDRiqS9HyEhIfObr56_1J6dF-07dZQTYvE/pubhtml?widget=true&amp;headers=false"></iframe>
